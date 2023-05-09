@@ -36,3 +36,5 @@ function strStr(haystack: string, needle: string): number {
   // If no occurence is found, return -1
   return -1;
 }
+
+strStr("sadbutsad", "sad");
