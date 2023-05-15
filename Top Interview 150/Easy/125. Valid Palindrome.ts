@@ -2,7 +2,6 @@
 
 /* 125. Valid Palindrome
     A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
-
     Given a string s, return true if it is a palindrome, or false otherwise.
 
     Example 1:
@@ -23,26 +22,28 @@
 */
 
 function isPalindrome(s: string): boolean {
-  // If falsy, return false
+  // If the input string is falsy, return false
   if (!s) return false;
 
-  // Remove special characters
+  // Remove special characters and convert to lowercase
   s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-  // Initialize pointers
+  // Initialize two pointers, one at the start of the string and one at the end
   let start = 0;
   let end = s.length - 1;
 
-  // Loop till start and end meet
+  // Loop until the two pointers meet in the middle
   while (start < end) {
-    // If start and end don't match, return false
-    if (s[start] !== s[end]) return false;
-    // Else move start to right and end to left
+    // If the characters at the start and end of the string don't match, return false
+    if (s[start] !== s[end]) {
+      return false;
+    }
+    // Move the pointers towards each other
     start++;
     end--;
   }
 
-  // If loop completed, return true
+  // If the loop completes without returning false, the string is a palindrome
   return true;
 }
 
