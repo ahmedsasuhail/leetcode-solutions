@@ -21,22 +21,26 @@
 */
 
 function lengthOfLastWord(s: string): number {
-  // If empty, return 0
+  // If the input string is empty, return 0
   if (!s) return 0;
 
-  // Initialize
+  // Initialize a counter to keep track of the length of the last word
   let lastWordCount = 0;
 
-  // Loop backwards
-  for (let i = s.length - 1; i > 0; i--) {
-    // Increment if there is a valid character
-    if (s[i] !== " ") lastWordCount++;
-
-    // Break out of the loop if already found a character and encountered empty space
-    if (lastWordCount && s[i] === " ") break;
+  // Loop backwards through the string
+  for (let i = s.length - 1; i >= 0; i--) {
+    // If the current character is not a space, increment the counter
+    if (s[i] !== " ") {
+      lastWordCount++;
+    }
+    // If the counter is greater than 0 (meaning we have found at least one non-space character)
+    // and we encounter a space, break out of the loop
+    if (lastWordCount && s[i] === " ") {
+      break;
+    }
   }
 
-  // Return the count
+  // Return the count of the last word
   return lastWordCount;
 }
 

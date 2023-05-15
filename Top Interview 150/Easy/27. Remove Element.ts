@@ -2,9 +2,7 @@
 
 /* 27. Remove Element
     Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
-
     Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
-
     Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
     Return k.
 
@@ -23,24 +21,24 @@
 */
 
 function removeElement(nums: number[], val: number): number {
-  // If empty, return 0
+  // If the input array is empty, return 0
   if (!nums.length) return 0;
 
-  // Initialize pointer
+  // Initialize a pointer to keep track of non-val elements
   let k = 0;
 
-  // Loop through the array
+  // Loop through the input array
   for (let i = 0; i < nums.length; i++) {
-    // If current value not equal to val
+    // If the current element is not equal to val
     if (nums[i] !== val) {
-      // Set the current value in pointer place
+      // Move the element to the position pointed by the pointer
       nums[k] = nums[i];
-      // Increment pointer
+      // Increment the pointer
       k++;
     }
   }
 
-  // Return the pointer
+  // Return the length of the modified array
   return k;
 }
 
