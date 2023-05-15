@@ -31,6 +31,7 @@ function lengthOfLastWord(s: string): number {
   for (let i = s.length - 1; i > 0; i--) {
     // Increment if there is a valid character
     if (s[i] !== " ") lastWordCount++;
+
     // Break out of the loop if already found a character and encountered empty space
     if (lastWordCount && s[i] === " ") break;
   }
