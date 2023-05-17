@@ -27,13 +27,13 @@ function strStr(haystack: string, needle: string): number {
       for (let j = 0; j < needle.length; j++) {
         // If needle and haystack characters don't match, break out of the loop
         if (needle[j] !== haystack[i + j]) break;
-        // If it gets through till the last item, return the index of first occurence
+        // If it gets through till the last item, return the index of first occurrence
         if (j === needle.length - 1) return i;
       }
     }
   }
 
-  // If no occurence is found, return -1
+  // If no occurrence is found, return -1
   return -1;
 }
 

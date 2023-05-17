@@ -20,23 +20,23 @@
 */
 
 const removeDuplicates = function (nums) {
-  // If the input array is empty or undefined, there are no duplicates to remove.
+  // If the input array is empty or undefined, there are no duplicates to remove
   if (!nums || nums.length === 0) return 0;
 
-  // Initialize a pointer k to keep track of the last unique element.
+  // Initialize a pointer k to keep track of the last unique element
   let k = 0;
 
-  // Loop through the array starting from the second element.
+  // Loop through the array starting from the second element
   for (let i = 1; i < nums.length; i++) {
     // If the current element is different from the last unique element,
-    // increment k and copy the current element to the kth position.
+    // increment k and copy the current element to the kth position
     if (nums[k] !== nums[i]) {
       k++;
       nums[k] = nums[i];
     }
   }
 
-  // The length of the subarray nums[0..k] is k+1, which is the number of unique elements.
+  // The length of the subarray nums[0..k] is k+1, which is the number of unique elements
   return k + 1;
 };
 

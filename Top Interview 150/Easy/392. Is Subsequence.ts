@@ -14,24 +14,24 @@
 */
 
 function isSubsequence(s: string, t: string): boolean {
-  // If the subsequence string s is longer than the target string t, s cannot be a subsequence of t.
+  // If the subsequence string s is longer than the target string t, s cannot be a subsequence of t
   if (s.length > t.length) return false;
 
-  // If s and t are equal, s is a subsequence of t.
+  // If s and t are equal, s is a subsequence of t
   if (s === t) return true;
 
-  // Initialize a pointer sPointer to keep track of the current character in s.
+  // Initialize a pointer sPointer to keep track of the current character in s
   let sPointer = 0;
 
-  // Loop through the characters in t.
+  // Loop through the characters in t
   for (let tPointer = 0; tPointer < t.length; tPointer++) {
-    // If the current character in s matches the current character in t, move to the next character in s.
+    // If the current character in s matches the current character in t, move to the next character in s
     if (s[sPointer] === t[tPointer]) sPointer++;
-    // If we have matched all characters in s, s is a subsequence of t.
+    // If we have matched all characters in s, s is a subsequence of t
     if (sPointer === s.length) return true;
   }
 
-  // If we reach the end of t without matching all characters in s, s is not a subsequence of t.
+  // If we reach the end of t without matching all characters in s, s is not a subsequence of t
   return false;
 }
 
