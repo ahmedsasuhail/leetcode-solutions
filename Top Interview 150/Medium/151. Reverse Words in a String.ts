@@ -1,4 +1,4 @@
-//
+// https://leetcode.com/problems/reverse-words-in-a-string/solutions/3601899/js-ts-2-simple-solutions-100-explained-and-commented/
 
 /* 151. Reverse Words in a String
     Given an input string s, reverse the order of the words.
@@ -21,7 +21,7 @@
     Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
 */
 
-// Solution #1: Without built-in methods
+// Solution #1: Without using built-in methods and utilizing two pointers approach
 function reverseWordsOne(s: string): string {
   // Step 1: Construct an array of words by removing spaces
   let sArr: string[] = constructWordsArr(s);
@@ -83,7 +83,7 @@ function joinArrReverse(strArr: string[]): string {
 
 reverseWordsOne("a good   example");
 
-// Solution #2: Built-in methods
+// Solution #2: Using built-in methods
 function reverseWordsTwo(s: string): string {
   return s
     .split(" ") // Split the input string into an array of words
