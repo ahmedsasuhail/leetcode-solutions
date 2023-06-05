@@ -22,7 +22,64 @@
 */
 
 // Solution #1: Without built-in methods
-function reverseWordsOne(s: string): string {}
+function reverseWordsOne(s: string): string {
+  // Step 1: Construct an array of words by removing spaces
+  let sArr: string[] = constructWordsArr(s);
+
+  // Step 2: Join the constructed array with spaces
+  s = joinArrReverse(sArr);
+
+  // Return the final reversed string
+  return s;
+}
+
+function constructWordsArr(str: string): string[] {
+  let word: string = "",
+    idx: number = 0;
+  const strArr: string[] = [];
+
+  // Iterate over each character in the input string `str`
+  while (idx < str.length) {
+    if (str[idx] === " ") {
+      // If the current character is a space, add the current word to the array of words `strArr` and reset the current word
+      if (word) {
+        strArr.push(word);
+        word = "";
+      }
+
+      idx++;
+      continue;
+    }
+
+    // If the current character is not a space, add it to the current word
+    word += str[idx];
+    idx++;
+  }
+
+  // If there is a word left over at the end of the input string, add it to the array of words `strArr`
+  if (word) {
+    strArr.push(word);
+  }
+
+  // Return the array of words `strArr`
+  return strArr;
+}
+
+function joinArrReverse(strArr: string[]): string {
+  let newStr: string = "";
+  const lastIdx: number = strArr.length - 1;
+
+  // Iterate over each word in the array of words `strArr` in reverse order
+  for (let idx = lastIdx; idx >= 0; idx--) {
+    // If the current word is not the last word in the array, add a space to the new string `newStr`
+    if (idx !== lastIdx) newStr += " ";
+    // Add the current word to the new string `newStr`
+    newStr += strArr[idx];
+  }
+
+  // Return the new string `newStr`
+  return newStr;
+}
 
 reverseWordsOne("a good   example");
 
